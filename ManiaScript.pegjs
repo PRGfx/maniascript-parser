@@ -151,7 +151,7 @@ IdentifierName
  = $(!Keyword Identifier)
 
 Integer
- = s:("-" __)? digits:Digit+ { return { type: "Integer", value: Number.parseInt(digits.join(""), 10) } * (s?-1:1); }
+ = s:("-" __)? digits:Digit+ { return { type: "Integer", value: Number.parseInt(digits.join(""), 10) * (s?-1:1) }; }
 
 Float
  = s:("-" __)? digits:Digit+ "." precision:Digit* { return { type: "Real", value: makeFloat(digits, precision, s) }; }
